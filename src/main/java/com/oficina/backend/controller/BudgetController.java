@@ -19,7 +19,7 @@ import com.oficina.backend.service.BudgetService;
 
 
 @RestController
-@RequestMapping(value = "budgets")
+@RequestMapping(value = "/budgets")
 public class BudgetController {
   
   @Autowired
