@@ -8,6 +8,7 @@ import com.oficina.backend.model.entities.enums.BudgetStatus;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -44,7 +45,7 @@ public class Budget {
   @JoinColumn(name = "vehicle_id")
   private Vehicle vehicle;
 
-  @OneToMany(mappedBy = "budget", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+  @OneToMany(mappedBy = "budget", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true, fetch = FetchType.EAGER)
   @Setter(value = AccessLevel.NONE)
   private List<ProductItem> items;
 
