@@ -43,7 +43,7 @@ public class Client {
   @JsonManagedReference
   private List<Vehicle> vehicles = new ArrayList<>();
 
-  @OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+  @OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true, fetch = FetchType.EAGER)
   private List<Budget> budgets = new ArrayList<>();
   
   public Client() {
